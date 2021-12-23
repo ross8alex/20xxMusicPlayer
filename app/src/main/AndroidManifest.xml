@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="0"
+    android:versionName="alpha"
+    package="com.example.music_player">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo_20xx"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo_20xx"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Music_Player">
+
+        <activity android:name=".SignInActivity"
+            android:theme="@style/Theme.Music_Player.NoActionBar"/>
+        <activity
+            android:name=".NewPlaylistActivity"
+            android:label="@string/title_activity_new_playlist"
+            android:noHistory="true"
+            android:theme="@style/Theme.Transparent">
+        </activity>
+        <activity
+            android:name=".AddToPlaylistActivity"
+            android:label="@string/title_activity_add_to_playlist"
+            android:noHistory="true"
+            android:theme="@style/Theme.Transparent">
+        </activity>
+        <activity
+            android:name=".EditActivity"
+            android:label="EditActivity"
+            android:theme="@style/Theme.Transparent">
+        </activity>
+
+        <service
+            android:name=".MusicService.PlayMusicService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".SimpleGoogleSignInActivity"
+            android:label="@string/title_activity_simple_google_sign_in" />
+        <activity
+            android:name=".GoogleSignInActivity"
+            android:label="Google Sign In" />
+
+        <provider
+            android:name=".ui.SuggestionProvider"
+            android:authorities="com.example.SuggestionProvider" />
+
+        <activity
+            android:name=".SearchActivity"
+            android:label="@string/title_activity_search"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.Music_Player.NoActionBar">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SearchGroupActivity"
+            android:label="SearchGroupActivity"
+            android:theme="@style/Theme.Music_Player.NoActionBar" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/Theme.Music_Player.NoActionBar" />
+        <activity
+            android:name=".AlbumGroupActivity"
+            android:label="@string/title_activity_album_group"
+            android:theme="@style/Theme.Music_Player.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.Music_Player.NoActionBar">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".SearchActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AlbumViewActivity" />
+        <activity android:name=".PlaylistViewActivity" />
+        <activity android:name=".AboutActivity"/>
+    </application>
+
+</manifest>

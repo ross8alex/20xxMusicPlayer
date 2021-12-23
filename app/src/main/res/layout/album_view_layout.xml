@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="0dp"
+        android:id="@+id/AlbumView" >
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/nestedScrollView1" >
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/relativeLayout1" >
+                <ImageView
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/AlbumImage" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:id="@+id/MultiArt">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_weight="1"
+                            android:scaleType="centerCrop"
+                            android:id="@+id/AlbumImage1" />
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_weight="1"
+                            android:scaleType="centerCrop"
+                            android:id="@+id/AlbumImage2" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/BottomRow"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_weight="1"
+                            android:scaleType="centerCrop"
+                            android:id="@+id/AlbumImage3" />
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_weight="1"
+                            android:scaleType="centerCrop"
+                            android:id="@+id/AlbumImage4"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <com.google.android.material.appbar.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:elevation="0dp"
+                    android:background="@drawable/gradient"
+                    app:theme="@style/Theme.Music_Player.AppBarOverlay"
+                    android:id="@+id/AppToolbar">
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:popupTheme="@style/Theme.Music_Player.PopupOverlay"
+                        android:elevation="0dp" />
+                </com.google.android.material.appbar.AppBarLayout>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_above="@+id/AlbumInfo"
+                    android:translationY="28dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/play_icon"
+                    android:background="?attr/colorPrimary"
+                    android:id="@+id/floatingPlayButton"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="7dp"
+                    android:layout_below="@id/AlbumImage"
+                    android:id="@+id/AlbumInfo">
+                    <TextView
+                        android:id="@+id/AlbumName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="60dp"
+                        android:text="Album Name"
+                        android:textStyle="bold"
+                        android:textSize="22dp"/>
+                    <TextView
+                        android:id="@+id/AlbumArtist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Album Artist"
+                        android:layout_below="@id/AlbumName"
+                        android:textSize="15dp"/>
+                    <TextView
+                        android:id="@+id/SongCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Song Count"
+                        android:layout_below="@id/AlbumArtist"
+                        android:textSize="12dp"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_below="@id/AlbumName"
+                        android:id="@+id/Overflow"
+                        android:src="@drawable/abc_ic_menu_overflow_material" />
+                </RelativeLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/AlbumInfo"
+                    android:id="@+id/Songs"/>
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/songLayout">
+        <include layout="@layout/song_layout"/>
+    </LinearLayout>
+
+</RelativeLayout>

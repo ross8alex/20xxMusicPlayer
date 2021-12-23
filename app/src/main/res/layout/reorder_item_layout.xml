@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ReorderView"
+
+    android:foreground="?android:attr/selectableItemBackground">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="5dp"
+        android:src="@drawable/reoder_icon"
+        android:layout_centerVertical="true"
+        android:id="@+id/Reorder" />
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_margin="5dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/Reorder"
+        android:id="@+id/Art" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/Art"
+        android:layout_toLeftOf="@+id/OverflowMenu"
+        android:layout_marginTop="3dp">
+        <TextView
+            android:text="SongName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17dp"
+            android:id="@+id/SongName" />
+        <TextView
+            android:text="SongArtist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:layout_below="@id/SongName"
+            android:id="@+id/SongArtist" />
+        <TextView
+            android:text="0:00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:layout_marginLeft="7dp"
+            android:layout_below="@id/SongName"
+            android:layout_toRightOf="@id/SongArtist"
+            android:id="@+id/SongTime" />
+    </RelativeLayout>
+    <ImageView
+        android:src="@drawable/abc_ic_menu_overflow_material"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="3dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:id="@+id/OverflowMenu" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

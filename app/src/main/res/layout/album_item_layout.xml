@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/AlbumImage" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/albumInfo"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            android:scaleType="center"
+            app:borderWidth="0dp"
+            app:maxImageSize="16dp"
+            android:background="?attr/colorPrimary"
+            android:id="@+id/playButton"
+            app:fabSize="mini"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/albumInfo"
+            android:layout_below="@+id/AlbumImage"
+            android:layout_toLeftOf="@+id/OverflowMenu"
+            android:layout_margin="3dp">
+            <TextView
+                android:text="AlbumName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:id="@+id/albumName"/>
+            <TextView
+                android:text="AlbumArtist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_below="@+id/albumName"
+                android:id="@+id/albumArtist" />
+        </RelativeLayout>
+        <ImageView
+            android:src="@drawable/abc_ic_menu_overflow_material"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="3dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_below="@+id/AlbumImage"
+            android:id="@+id/OverflowMenu" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

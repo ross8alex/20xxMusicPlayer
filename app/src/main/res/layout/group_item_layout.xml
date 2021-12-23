@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/MultiArt">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/AlbumImage1" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/AlbumImage2" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/BottomRow"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/AlbumImage3" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/AlbumImage4"/>
+            </LinearLayout>
+        </LinearLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            android:scaleType="center"
+            app:borderWidth="0dp"
+            app:maxImageSize="16dp"
+            android:background="?attr/colorPrimary"
+            app:fabSize="mini"
+            android:layout_alignBottom="@id/MultiArt"
+            android:id="@+id/PlayButton" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/MultiArt"
+            android:layout_toLeftOf="@+id/OverflowMenu"
+            android:layout_margin="3dp">
+            <TextView
+                android:text="GenreName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:id="@+id/GenreName"/>
+            <TextView
+                android:text="NumberOfAlbums"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11dp"
+                android:layout_below="@+id/GenreName"
+                android:id="@+id/NumberOfAlbums" />
+            <TextView
+                android:text="NumberOfSongs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11dp"
+                android:layout_marginLeft="0dp"
+                android:layout_toRightOf="@+id/NumberOfAlbums"
+                android:layout_below="@+id/GenreName"
+                android:id="@+id/NumberOfSongs" />
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_alignParentRight="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_below="@id/MultiArt"
+            android:id="@+id/OverflowMenu"
+            android:src="@drawable/abc_ic_menu_overflow_material" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/action_Shuffle"
+        android:orderInCategory="100"
+        android:title="Shuffle"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_PlayNext"
+        android:orderInCategory="100"
+        android:title="Play Next"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_AddtoQueue"
+        android:orderInCategory="100"
+        android:title="Add to Queue"
+        app:showAsAction="never" />
+</menu>
